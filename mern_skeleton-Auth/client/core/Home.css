@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 700px;
   margin: auto;
 }
 
@@ -24,15 +24,19 @@ body {
 }
 
 .card {
-  background-color:rgb(183, 220, 236);
+  background-color: rgb(183, 220, 236);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  margin: 20px 0;
+
+  max-width: 900px;
+  margin: auto;
+  margin: top 10px;
+  /* Add the appropriate value */
 }
 
 .title {
-  padding: 20px;
+  padding: 10px;
   background-color: rgb(80, 115, 80);
   font-size: 28px;
   border-bottom: 2px solid #ddd;
@@ -41,7 +45,13 @@ body {
 .media {
   width: 100%;
   height: auto;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #d09797;
+  display: flex;
+  align-items: center;
+  min-height: 800px;
+  margin: 5 auto;
+  object-fit: cover;
+  margin-bottom: 20px /* Add the appropriate value */;
 }
 
 .navbar {
@@ -49,7 +59,10 @@ body {
   padding: 15px 0;
   text-align: center;
   display: flex;
-  justify-content: space-between; /* Space out the links and cart */
+  justify-content: space-between;
+  /* Space out the links and cart */
+  margin-bottom: 20px;
+  align-items: center;
 }
 
 .navbar a {
@@ -65,7 +78,8 @@ body {
 }
 
 .cart-icon {
-  margin-left: auto; /* Align the cart to the right */
+  margin-left: auto;
+  /* Align the cart to the right */
   color: rgb(183, 220, 236);
   font-size: 24px;
   cursor: pointer;
@@ -74,9 +88,11 @@ body {
 .cart-icon:hover {
   color: #830f0f;
 }
+
 /* Footer */
 .footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(80, 115, 80);
@@ -84,40 +100,55 @@ body {
   color: white;
 }
 
-/* Contact Information */
-.contact-info {
+.socialLinks {
+  display: flex;
+  gap: 3px;
+}
+
+.socialLinks a img {
+  width: 30px; /* Adjust the size of social media icons */
+  height: 30px; /* Adjust the size of social media icons */
+}
+
+.gmailIcon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.contactInfo {
   text-align: left;
 }
 
-/* Copyright */
-.copyright {
+/* Add styles for the copyright text */
+.copyrightText {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 10px;
   text-align: right;
 }
 
-
-.lovedIcon {
-  color: "red", 
-}
 .search {
-  margin-left: 10px;
+  color: #dacca5;
 }
 
 /* Loved Icon */
 .lovedIcon {
   color: red;
-  font-size: 24px; /* Adjust the font size as needed */
-  margin-left: 10px; /* Add margin for spacing */
+  font-size: 24px;
+  /* Adjust the font size as needed */
+  margin-left: 10px;
+  /* Add margin for spacing */
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 
 .lovedIcon:hover {
-  color: #e44d26; /* Change color on hover */
+  color: red;
+  /* Change color on hover */
 }
 
 /* Cart Icon */
 .cartIcon {
-  color: white;
   font-size: 24px;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
@@ -125,4 +156,49 @@ body {
 
 .cartIcon:hover {
   color: rgb(228, 75, 37);
+}
+
+.navbarLink {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbarLinkHover {
+  text-decoration: underline;
+  color: #e4ce26;
+}
+
+.cartIconHover {
+  color: #e44d26;
+}
+
+.iconButton {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Add styles for the logo image */
+.logoImage {
+  width: 50px;
+  /* Add the appropriate width */
+  height: 60px;
+  /* Add the appropriate height */
+  object-fit: contain /* Add the appropriate object-fit value */;
+  /* Add any additional styles you want for the logo image */
+  color: papayawhip;
+}
+
+/* Add styles to display the logo and navbar links in one line */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoImageHover {
+  color: #e4ce26;
 }

@@ -34,6 +34,7 @@ const About = () => {
         <a href="/admin">Admin</a>
         {/* Add more links as needed */}
       </div>
+
       <h1>About Us</h1>
       {/* Image Carousel */}
       <div className="image-carousel">
@@ -51,31 +52,31 @@ const About = () => {
         <div className="category-images">
           <a href="/earrings">
             <img src="/images/earrings.jpg" alt="Earrings" />
-            Earrings
           </a>
           <a href="/necklaces">
             <img src="/images/necklaces.jpg" alt="Necklaces" />
-            Necklaces
           </a>
           <a href="/rings">
             <img src="/images/rings.jpg" alt="Rings" />
-            Rings
           </a>
           <a href="/bracelets">
-            <img src="/images/bracelets.jpg" alt="Bracelets" />
-            Bracelets
+            <img src="/images/bracelets (2).jpg" alt="Bracelets" />
           </a>
           <a href="/bracelets">
             <img
               src="/images/pexels-kristina-paukshtite-885218.jpg"
               alt="Different Bracelet"
             />
-            New Bracelets
           </a>
 
           <a href="/pendants">
             <img src="/images/pendants.jpg" alt="Pendants" />
-            Pendants
+          </a>
+          <a href="/pendants">
+            <img src="/images/earrings (2).jpg" alt="Pendants" />
+          </a>
+          <a href="/pendants">
+            <img src="/images/necklaces (2).jpg" alt="Pendants" />
           </a>
         </div>
       </div>
@@ -100,28 +101,95 @@ const About = () => {
           excellence, we aim to be a leader in the jewelry industry, known for
           our artistry, integrity, and commitment to customer satisfaction."
         </p>
-      </div>
 
-      {/* Footer */}
+        {/* Testimonials */}
+        <div className="testimonials-section">
+          <h2>What Our Customers Say</h2>
+          <div className="testimonial">
+            <p>
+              "I absolutely love the jewelry from Sparkling Minds! Each piece is
+              beautifully crafted and unique. The attention to detail is
+              exceptional."
+            </p>
+            <div className="star-rating">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star} className="star-icon">
+                  ★
+                </span>
+              ))}
+            </div>
+            <p>- Sarah D.</p>
+          </div>
 
-      <footer className="footer">
-        <div className="social-links">
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/images/instagram.jpg" alt="Instagram" />
-          </a>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/images/facebook.png" alt="Facebook" />
-          </a>
+          <div className="testimonial">
+            <p>
+              "The quality of the jewelry is outstanding. I've purchased
+              multiple pieces for myself and as gifts, and they are always
+              well-received."
+            </p>
+            <div className="star-rating">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star} className="star-icon">
+                  ★
+                </span>
+              ))}
+            </div>
+            <p>- Michael S.</p>
+          </div>
+
+          <div className="testimonial">
+            <p>
+              "Sparkling Minds has a fantastic selection of jewelry. The online
+              shopping experience is seamless, and the customer service is
+              top-notch."
+            </p>
+            <div className="star-rating">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star} className="star-icon">
+                  ★
+                </span>
+              ))}
+            </div>
+            <p>- Emily W.</p>
+          </div>
         </div>
-      </footer>
+
+        {/* Footer */}
+        <footer className="footer">
+          <div className="social-links">
+            {/* Social media icons */}
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/instagram.jpg" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/facebook.png" alt="Facebook" />
+            </a>
+          </div>
+          {/* Gmail icon for more info */}
+          <div className="gmail-icon">
+            <i className="fa fa-envelope" aria-hidden="true"></i>
+          </div>
+          {/* Contact Information */}
+          <div className="contact-info">
+            <p>Contact us:</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@sparklingMinds.com</p>
+          </div>
+
+          {/* Copyright */}
+          <div className="copyright">
+            <p>&copy; 2023 Sparkling Minds. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 };
