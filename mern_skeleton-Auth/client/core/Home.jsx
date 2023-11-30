@@ -6,8 +6,13 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import LogoImage from "./../assets/images/Logo.png";
 import { Link } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import IconButton from "@material-ui/core/IconButton";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+
 import "./Home.css";
 import SparklingMindsLogo from "./../assets/images/Logo.png";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -56,12 +61,36 @@ const useStyles = makeStyles((theme) => ({
   cartIconHover: {
     color: "#e44d26",
   },
+  iconButton: {
+    color: "white",
+    fontSize: 24,
+    cursor: "pointer",
+    transition: "color 0.3s ease-in-out",
+  },
+  search: {
+    marginLeft: theme.spacing(2),
+  },
 }));
 
-export default function Home() {
+const Home = () => {
   const classes = useStyles();
-
+  const [cartItems, setCartItems] = useState([]);
   const cartIcon = "🛒";
+
+  const handleCartClick = () => {
+    // Handle your cart click logic here
+    console.log("Show Cart:", cartItems);
+  };
+
+  const handleCartKeyPress = (event) => {
+    // Handle keyboard interaction (e.g., Enter key) for the cart
+    if (event.key === "Enter") {
+      handleCartClick();
+    }
+  };
+  const addToCart = (item) => {
+    setCartItems((prevItems) => [...prevItems, item]);
+  };
 
   return (
     <>
@@ -116,9 +145,27 @@ export default function Home() {
                 Security Test
               </Link>
             </div>
-            {/* Cart Icon */}
-            <div className={`${classes.cartIcon} ${classes.cartIconHover}`}>
-              {cartIcon}
+            {/* Search Bar, Loved Items, and Cart Icons */}
+            <div className={classes.navbarLink}>
+              <TextField
+                id="search"
+                label="Search"
+                variant="outlined"
+                className={classes.search}
+              />
+              <IconButton>
+                <FavoriteIcon />
+              </IconButton>
+              <button
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleCartKeyPress(e);
+                  }
+                }}
+                onClick={() => addToCart(/* pass your item here */)}
+              >
+                {cartIcon}
+              </button>
             </div>
           </div>
         </div>
@@ -179,4 +226,6 @@ export default function Home() {
       </footer>
     </>
   );
-}
+};
+
+export default Home;

@@ -55,22 +55,20 @@
 }
 /* Footer */
 .footer {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: rgb(80, 115, 80);
-padding: 20px;
-color: rgb(181, 204, 181);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(80, 115, 80);
+  padding: 20px;
+  color: rgb(181, 204, 181);
 }
-
-
 
 /* Contact Information */
 .contact-info {
-text-align: left;
+  text-align: left;
 }
 
 /* Copyright */
 .copyright {
-text-align: right;
+  text-align: right;
 }
