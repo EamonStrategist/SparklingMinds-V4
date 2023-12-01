@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Users.css';
 
 const Users = () => {
-    return (
-      <>
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '', 
+  });
+
+  const [editable, setEditable] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  };
+
+  const handleEdit = () => {
+    setEditable(true);
+  };
+
+  const handleSave = () => {
+    setEditable(false);
+  };
+
+  return (
+    <>
         {/* Render the navbar */}
         <div className="navbar">
           <Link to="/" className="link">
@@ -43,7 +64,61 @@ const Users = () => {
             Admin
           </Link>
         </div>
+      {/* User Profile Section */}
+      <div className="user-profile-box">
+        <h2>User Profile</h2>
+        <div className="user-profile"></div>
+        {editable ? (
+          <form>
+            <label htmlFor="userName">Name:</label>
+            <input
+              type="text"
+              id="userName"
+              name="name"
+              value={user.name}
+              onChange={handleChange}
+            />
+            <br />
 
+            <label htmlFor="userEmail">Email:</label>
+            <input
+              type="email"
+              id="userEmail"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+            />
+            <br />
+
+            <label htmlFor="userPassword">Password:</label>
+            <input
+              type="password"
+              id="userPassword"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+            />
+            <br />
+
+            <button onClick={handleSave}>Save</button>
+          </form>
+        ) : (
+          <>
+            <p>
+              <strong>Name:</strong> {user.name}
+            </p>
+            <p>
+              <strong>Email:</strong> {user.email}
+            </p>
+            <p>
+              <strong>Password:</strong> ***** 
+            </p>
+
+            <button onClick={handleEdit}>Edit</button>
+          </>
+        )}
+
+      </div>
         <footer className="footer">
         <div className="social-links">
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
@@ -55,8 +130,7 @@ const Users = () => {
           </a>
         </div>
       </footer>
-  
-        
+           
       </>
     );
   };
