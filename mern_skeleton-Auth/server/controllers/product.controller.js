@@ -75,4 +75,5 @@ const read = (req, res) => {
   return res.json(req.profile);
 };
 
+
 export default { create, productByID, read, list, remove, update };

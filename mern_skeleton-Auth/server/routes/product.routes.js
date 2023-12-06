@@ -9,7 +9,7 @@ import productCtrl from '../controllers/product.controller.js'
 	.put(userCtrl.update) 
 	.delete(userCtrl.remove)*/
 
-router.route('/api/productss/:productId')
+router.route('/api/products/:productId')
 router.param('productId', productCtrl.productByID)
 router.route('/api/products/:productId').get(productCtrl.read)
 router.route('/api/products/:productId').put(productCtrl.update)

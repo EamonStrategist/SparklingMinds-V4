@@ -22,7 +22,9 @@ const Admin = () => {
         <h1>Admin</h1>
         <div className="admin-form">
           {/* Add your admin form elements here */}
-          <p><a href="/admin/products/">Products</a></p>
+          <p><a href="/admin/products/1">Products</a></p>
+          <p><a href="/admin/productslist">Products List</a></p>
+
         </div>
       </div>
     </div>
