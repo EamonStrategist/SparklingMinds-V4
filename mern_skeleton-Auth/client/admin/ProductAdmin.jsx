@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from "react";
 import {create} from "./api-adminproduct.js";
 
-const ProductAdmin = ({match}) => {
+const ProductAdmin = ({props}) => {
 
 
   const[values, setValues] = useState({
@@ -95,7 +95,7 @@ const ProductAdmin = ({match}) => {
     const signal = abortController.signal
 
     read({
-      productId: match.params.productId
+      productId: this.props.match.params.productId
     }, signal).then((data) => {
       if (data && data.error) {
         setValues({...values, error: data.error})
@@ -107,7 +107,7 @@ const ProductAdmin = ({match}) => {
       abortController.abort()
     }
 
-  }, [match.params.productId])
+  }, [this.props.match.params.productId]);
 
 
 
