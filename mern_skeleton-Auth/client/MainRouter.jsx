@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Routes, useParams} from 'react-router-dom'
+import {Route, Routes, useParams, Switch} from 'react-router-dom'
 import Home from './core/Home' 
 import Users from './user/Users'
 import Signin from './user/Signin'
@@ -20,20 +20,20 @@ const MainRouter = () => {
 
 
 return ( <div> 
-<Routes>
-<Route exact path="/" element={<Home />}/> 
-<Route exact path="/signin" element={<Signin/>}/>
-<Route exact path="/signup" element={<Signup/>}/>
-<Route exact path="/users" element={<Users/>}/>
-<Route exact path="/admin" element={<Admin/>}/>
+<Switch>
+<Route exact path="/" component={Home}/> 
+<Route exact path="/signin" component={Signin}/>
+<Route exact path="/signup" component={Signup}/>
+<Route exact path="/users" component={Users}/>
+<Route exact path="/admin" component={Admin}/>
 <Route exact path="/admin/products/:ProductId" component={ProductAdmin}/>
-<Route exact path="/about" element={<About/>}/>
-<Route exact path="/products" element={<ProductsPage/>}/>
-<Route exact path="/contact" element={<Contact/>}/>
-<Route exact path="/testpage" element={<TestPage/>}/>
-<Route exact path="/admin/productslist/" element={<ProductsList/>}/>
+<Route exact path="/about" component={About}/>
+<Route exact path="/products" component={ProductsPage}/>
+<Route exact path="/contact" component={Contact}/>
+<Route exact path="/testpage" component={TestPage}/>
+<Route exact path="/admin/productslist/" component={ProductsList}/>
 
-</Routes>
+</Switch>
 </div> 
 )
 }
